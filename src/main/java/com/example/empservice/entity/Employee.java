@@ -14,6 +14,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor(staticName = "build")
@@ -44,5 +45,6 @@ public class Employee {
 	@Column(name = "UPDATE_TIMESTAMP")
 	@UpdateTimestamp
 	private LocalDateTime updateTimeStamp;
+	
 
 }
