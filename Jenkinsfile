@@ -1,7 +1,7 @@
 pipeline{
   agent any
   environment{
-   PATH = "C://Program Files/Maven/apache-maven-3.6.2-bin/apache-maven-3.6.2/bin:$PATH"
+   PATH = "C:\\Program Files\Maven\apache-maven-3.6.2-bin\apache-maven-3.6.2\bin:$PATH"
   }
   stages{
     stage("Checkout master branch from git"){
