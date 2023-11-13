@@ -1,3 +1,4 @@
+currentBuild.displayName = "emp-service-#"+currentBuild.number
 pipeline{
   agent any
   stages{
