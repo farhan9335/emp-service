@@ -13,5 +13,10 @@ pipeline{
          bat "mvn clean install"
        }
     }
+    stage("Docker Build"){
+       steps{
+         echo "Docker Build is in progress"
+       }
+    }
   }
 }
