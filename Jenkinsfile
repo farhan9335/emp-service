@@ -16,7 +16,7 @@ pipeline{
     stage("Docker Build"){
        steps{
          echo "Start Docker Build..."
-         bat "docker build -t farhan1985/emp-service:v1"
+         bat "docker build -t farhan1985/emp-service:v1 ."
        }
     }
   }
