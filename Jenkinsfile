@@ -1,5 +1,6 @@
 currentBuild.displayName = "emp-service-#"+currentBuild.number
 pipeline{
+
   agent any
   stages{
     stage("Checkout master branch from git"){
