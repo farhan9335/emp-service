@@ -11,7 +11,6 @@ pipeline{
        steps{
          echo "maven build of branch..."
          bat "mvn clean install"
-         
        }
     }
   }
