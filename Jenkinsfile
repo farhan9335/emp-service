@@ -15,7 +15,8 @@ pipeline{
     }
     stage("Docker Build"){
        steps{
-         echo "Docker Build is in progress"
+         echo "Start Docker Build..."
+         
        }
     }
   }
