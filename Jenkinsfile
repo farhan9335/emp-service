@@ -24,8 +24,8 @@ pipeline{
     }
   }
   
-  def getDockerTage(){
-    def tag = bat script:'git rev-parse Head',returnStdout:true
+   getDockerTage(){
+    tag = bat script:'git rev-parse Head',returnStdout:true
     return tag
   }
 }
