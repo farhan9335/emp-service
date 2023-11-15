@@ -23,7 +23,7 @@ pipeline{
     stage("Docker Build"){
        steps{
          echo "Start Docker Build..."
-         bat "docker build -t farhan1985/emp-service:${DOCKER_TAG} ."
+         bat "docker build -t farhan1985/emp-service:${DOCKER_TAG}"
          echo "Start Docker End..."
        }
     }
