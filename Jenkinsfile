@@ -20,15 +20,16 @@ pipeline{
          echo "Start Docker End..."
        }
     }
-    {
-     def getDockerTage(){
-    def tag = bat script:'git rev-parse Head',returnStdout:true
-    return tag
-  }
-}
    
    
     
   }
+  node("sasasas"){
+       def getDockerTage(){
+    def tag = bat script:'git rev-parse Head',returnStdout:true
+    return tag
+  }
+  }
+
     
 }
