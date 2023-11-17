@@ -23,12 +23,13 @@ pipeline{
          echo "Start Docker End..."
        }
     }
-     def getDockerTage(){
-   echo "Inside getDockerTage... "
+   
+    
+  }
+    def getDockerTage(){
+    echo "Inside getDockerTage... "
     def tag = bat script:"git rev-parse Head",returnStdout:true
     echo "Generated Tag : "+tag
     return tag
-  }
-    
   }
 }
