@@ -1,12 +1,6 @@
 currentBuild.displayName = "emp-service-#"+currentBuild.number
 pipeline{
   agent any
-  def getDockerTage(){
-   echo "Inside getDockerTage... "
-    def tag = bat script:"git rev-parse Head",returnStdout:true
-    echo "Generated Tag : "+tag
-    return tag
-  }
   environment{
    DOCKER_TAG = getDockerTage()
   }
@@ -29,6 +23,12 @@ pipeline{
          echo "Start Docker End..."
        }
     }
+     def getDockerTage(){
+   echo "Inside getDockerTage... "
+    def tag = bat script:"git rev-parse Head",returnStdout:true
+    echo "Generated Tag : "+tag
+    return tag
+  }
     
   }
 }
