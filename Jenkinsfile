@@ -16,25 +16,20 @@ pipeline{
          bat "mvn clean install"
        }
     }
+   
     stage("Docker Build"){
+     def getDockerTage(){
+    echo "Inside getDockerTage... "
+    def tag = bat script:"git rev-parse Head",returnStdout:true
+    echo "Generated Tag : "+tag
+    return tag
+  }
        steps{
          echo "Start Docker Build..."
          bat "docker build -t farhan1985/emp-service:${DOCKER_TAG} ."
          echo "Start Docker End..."
        }
     }
-    stage("Method invkoe"){
-        steps{
-            def getDockerTage(){
-            echo "Inside getDockerTage... "
-            def tag = bat script:"git rev-parse Head",returnStdout:true
-           echo "Generated Tag : "+tag
-           return tag
-  }
-        }
-
-    }
-
    
     
   }
