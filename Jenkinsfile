@@ -16,6 +16,12 @@ pipeline{
          bat "mvn clean install"
        }
     }
+    def getDockerTage(){
+    echo "Inside getDockerTage... "
+    def tag = bat script:"git rev-parse Head",returnStdout:true
+    echo "Generated Tag : "+tag
+    return tag
+  }
     stage("Docker Build"){
        steps{
          echo "Start Docker Build..."
@@ -23,12 +29,7 @@ pipeline{
          echo "Start Docker End..."
        }
     }
-    getDockerTage(){
-    echo "Inside getDockerTage... "
-    tag = bat script:"git rev-parse Head",returnStdout:true
-    echo "Generated Tag : "+tag
-    return tag
-  }
+   
     
   }
     
