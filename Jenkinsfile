@@ -13,19 +13,6 @@ pipeline{
          bat "mvn clean install"
        }
     }
-   stage("Build"){
-       steps{
-           script{
-                def getDockerTage(){
-    def tag = bat script:'git rev-parse Head',returnStdout:true
-    return tag
-  }
-           }
-
-       }
-
-   }
-
     stage("Docker Build"){
        steps{
          echo "Start Docker Build..."
@@ -33,6 +20,13 @@ pipeline{
          echo "Start Docker End..."
        }
     }
+    {
+     def getDockerTage(){
+    def tag = bat script:'git rev-parse Head',returnStdout:true
+    return tag
+  }
+}
+   
    
     
   }
