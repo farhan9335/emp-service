@@ -2,8 +2,9 @@ currentBuild.displayName = "emp-service-#"+currentBuild.number
 pipeline{
   agent any
   environment{
+   echo "Inside env block"
    DOCKER_TAG = getDockerTage()
-   echo "Dcoker Tag -------- "+${DOCKER_TAG}
+   echo "executed env block"
   }
   stages{
     stage("Checkout master branch from git"){
@@ -20,7 +21,7 @@ pipeline{
     stage("Docker Build"){
        steps{
          echo "Start Docker Build..."
-         bat "docker build -t farhan1985/emp-service:v2 ."
+         bat "docker build -t farhan1985/emp-service:"+${DOCKER_TAG}+ " ."
          echo "Start Docker End..."
        }
     }
