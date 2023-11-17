@@ -29,7 +29,7 @@ pipeline{
 
    def getDockerTage(){
     echo "started to execute getDockerTage"
-    def tag = bat(returnStdout: true, script: 'git rev-parse HEAD').trim()
+    def tag = bat(returnStdout: true, script: 'git rev-parse HEAD').trim().result
     echo "Execution done getDockerTage.....${tag}"
     return tag
     
