@@ -26,9 +26,9 @@ pipeline{
    
     
   }
-    def getDockerTage(){
+     getDockerTage(){
     echo "Inside getDockerTage... "
-    def tag = bat script:"git rev-parse Head",returnStdout:true
+    tag = bat script:"git rev-parse Head",returnStdout:true
     echo "Generated Tag : "+tag
     return tag
   }
