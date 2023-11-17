@@ -3,7 +3,7 @@ pipeline{
   agent any
   environment{
    DOCKER_TAG = getDockerTage()
-   echo "Dcoker Tag -------- "+DOCKER_TAG
+   echo "Dcoker Tag -------- "+${DOCKER_TAG}
   }
   stages{
     stage("Checkout master branch from git"){
