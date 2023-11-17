@@ -20,7 +20,7 @@ pipeline{
        steps{
          echo "Start Docker Build..."
          echo "Docker Tag is --------> ${DOCKER_TAG}"
-         bat "docker build -t farhan1985/emp-service:${DOCKER_TAG} ."
+         bat "docker build -t farhan1985/emp-service:v4 ."
          echo "Start Docker End..."
        }
     }
@@ -29,8 +29,10 @@ pipeline{
 
    def getDockerTage(){
     echo "started to execute getDockerTage"
-    def tag = bat script:'git rev-parse Head',returnStdout:true
-    echo "Execution done getDockerTage....."
+    script{
+       def tag = bat(returnStdout:true,script:'git rev-parse Head') 
+    }
+    echo "Execution done getDockerTage.....${tag}"
     return tag
     
  }
