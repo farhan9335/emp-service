@@ -3,6 +3,7 @@ pipeline{
   agent any
   environment{
    DOCKER_TAG = getDockerTage()
+   echo DOCKER_TAG
   }
   stages{
     stage("Checkout master branch from git"){
@@ -29,7 +30,7 @@ pipeline{
    def getDockerTage(){
     echo "started to execute getDockerTage"
     def tag = bat script:'git rev-parse Head',returnStdout:true
-    echo "Execution done getDockerTage....."+tag
+    echo "Execution done getDockerTage....."
     return tag
     
  }
