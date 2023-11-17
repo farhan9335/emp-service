@@ -1,9 +1,6 @@
 currentBuild.displayName = "emp-service-#"+currentBuild.number
 pipeline{
   agent any
-  environment{
-   DOCKER_TAG = getDockerTage()
-  }
   stages{
     stage("Checkout master branch from git"){
        steps{
