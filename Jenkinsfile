@@ -2,9 +2,7 @@ currentBuild.displayName = "emp-service-#"+currentBuild.number
 pipeline{
   agent any
   environment{
-   echo "Inside env block"
    DOCKER_TAG = getDockerTage()
-   echo "executed env block"
   }
   stages{
     stage("Checkout master branch from git"){
