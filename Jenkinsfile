@@ -18,15 +18,9 @@ pipeline{
     }
    
     stage("Docker Build"){
-     def getDockerTage(){
-    echo "Inside getDockerTage... "
-    def tag = bat script:"git rev-parse Head",returnStdout:true
-    echo "Generated Tag : "+tag
-    return tag
-  }
        steps{
          echo "Start Docker Build..."
-         bat "docker build -t farhan1985/emp-service:${DOCKER_TAG} ."
+         bat "docker build -t farhan1985/emp-service:v2 ."
          echo "Start Docker End..."
        }
     }
