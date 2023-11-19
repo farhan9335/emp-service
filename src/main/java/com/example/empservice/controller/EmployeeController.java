@@ -26,6 +26,11 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeService employeeService;
+	
+	@GetMapping(path = "/testEmployee")
+	public String testEmployee() {
+		return "Welcome, emp-service is up and working properly";
+	}
 
 	@PostMapping(path = "/employee")
 	public ResponseEntity<Employee> save(@RequestBody @Valid EmployeeDTO employeeDTO) {
