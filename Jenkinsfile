@@ -22,9 +22,10 @@ pipeline{
     }
     stage("Docker Push"){
        steps{
-         withCredentials([dockerCert(credentialsId: '', variable: 'DOCKER_CERT_PATH')]) {
-            bat "docker login -u farhan1985 -p ${DOCKER_CERT_PATH}"
-        }
+         echo "Started docker push"
+         bat "docker login -u farhan1985 -p ADmin#1122"
+         bat "docker push farhan1985/emp-service:${DOCKER_TAG}"
+         echo "Ended docker push"
        }
     }
   }  
