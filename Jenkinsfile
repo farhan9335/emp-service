@@ -23,8 +23,8 @@ pipeline{
     stage("Docker Push"){
        steps{
          echo "Started docker push"
-         bat "docker login -u farhan1985 -p ADmin#1122"
-         bat "docker push farhan1985/emp-service:${DOCKER_TAG}"
+         //bat "docker login -u farhan1985 -p ########"
+         //bat "docker push farhan1985/emp-service:${DOCKER_TAG}"
          echo "Ended docker push"
        }
     }
